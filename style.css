@@ -1,0 +1,86 @@
+.dx-datagrid .dx-data-row > td.bullet {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.box-item {
+  text-align: center;
+  /* padding-top: 34px;
+  font-size: 16px; */
+}
+
+hr {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  /* padding-bottom: 1rem; */
+}
+
+.master-detail-caption {
+  padding: 0 0 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.dx-card {
+  border-radius: 1rem 1rem 0 0px;
+  /* margin: 10px 0px 10px 0px; */
+}
+
+.dx-datagrid-rowsview .dx-selection.dx-row > td {
+  background-color: rgb(0,0,255,0.7) !important;
+  color: white !important;
+}
+
+#heading{
+  /* background: linear-gradient(to bottom, green 0%,white 50%,green 100%);  */
+  background-color: rgb(255,190,190);
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  height: 50px;
+  color: white;
+}
+/* .dx-datagrid-rowsview .dx-row > td, .dx-datagrid-rowsview .dx-row > tr > td {  
+  background-color: rgb(255, 255, 255);
+}
+ 
+.dx-datagrid .dx-row-alt > td, .dx-datagrid .dx-row-alt > tr > td {  
+  background-color: rgb(248, 248, 244);  
+} */
+
+.dx-datagrid-headers .dx-row {  
+  border-bottom: 1px solid #D2D2D2;
+  color: white;
+  background: rgb(73, 69, 69);
+}
+
+.splitter{
+  padding: 10px;
+  background-color: green;
+  color: white;
+  /* margin: 10px 0px 10px 0px; */
+  border-radius: 1rem 1rem 0 0px;
+  font-size: large;
+}
+
+.splitter2 {
+  padding: 5px;
+  background-color: green;
+  color: white;
+  margin: 0px 0px 10px 0px;
+  /* border-radius: 1rem 1rem 0 0px; */
+  font-size: large;
+}
+
+.content-block {
+  /* padding: 5px; */
+  margin: 5px;
+}
+
+input:read-only {
+  background-color: rgb(220,220,220);
+}
+.mostShort {
+  height: 26px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

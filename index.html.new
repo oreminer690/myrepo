@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>ข้อมูลผู้ใช้งาน</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/event.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/supplemental.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/unresolved.min.js"></script>
+
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/22.1.5/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/22.1.5/css/dx.light.css" />
+    <script src="https://cdn3.devexpress.com/jslib/22.1.5/js/dx.all.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="index.js"></script>
+  </head>
+  <body class="dx-viewport" id="bodyja" hidden>
+    <div id="toast"></div>
+    <div class="loadpanel"></div>
+    <div id="popup">
+      <div data-options="dxTemplate: { name: 'templatePopup' }">
+        <div id="dgPopup"></div>
+      </div>
+    </div>
+    <div id="popup2">
+      <div data-options="dxTemplate: { name: 'templatePopup2' }">
+        <div id="dgPopup2"></div>
+      </div>
+    </div>
+    <div id="popup3">
+      <div data-options="dxTemplate: { name: 'templatePopup3' }">
+        <div id="formClone"></div>
+      </div>
+    </div>
+    <div class="content-block dx-card responsive-paddings">
+      <div class="splitter"><h3><b>ข้อมูลผู้ใช้งาน</b></h3></div>
+        <div data-bind="visible: !showForm()">
+          <div id="dataGrid" style="padding: 5px"></div>
+        </div>
+        <div data-bind="visible: showForm() === 'edit'">
+          <button type="button" class="btn btn-warning btnBack" style="padding: 5px; margin: 5px;">ย้อนกลับ</button>
+              <h3 style="margin: 10px; font-size: 20px;">แก้ไข User</h3>
+              <hr style="margin: 10px"/>
+              <div id="tabpanel">
+                <div id="tabpanel-container" style="padding: 5px; margin: 5px;">
+                  <div id="formEdit" style="padding: 5px; margin: 5px;"></div>
+                  <div id="editTab2">
+                    <div id="dgEdit" style="padding: 5px; margin: 5px;"></div>
+                    <div style="padding: 5px; margin: 5px;"><div id="tlbEdit"></div></div>
+                  </div>
+                  <div id="editTab3">
+                    <div id="dgSecurity" style="padding: 5px; margin: 5px;"></div>
+                  </div>
+                </div>
+              </div>
+          <button type="button" class="btn btn-warning btnBack" style="padding: 5px; margin: 5px;">ย้อนกลับ</button>
+        </div>
+        <div data-bind="visible: showForm() === 'add'">
+          <button type="button" class="btn btn-warning btnBack" style="padding: 5px; margin: 5px;">ย้อนกลับ</button>
+            <div id="formAdd" style="padding: 5px; margin: 5px;"></div>
+            <div data-bind="visible: showFormSet2()">
+              <h3 style="margin: 10px; font-size: 20px;">ส่วนที่ 2 Set Authorization</h3>
+              <hr style="margin: 10px"/>
+              <div id="dgAdd" style="padding: 5px; margin: 5px;"></div>
+              <div style="padding: 5px; margin: 5px;"><div id="tlb"></div></div>
+            </div>
+          <button type="button" class="btn btn-warning btnBack" style="padding: 5px; margin: 5px;">ย้อนกลับ</button>
+        </div>
+    </div>
+  </body>
+</html>

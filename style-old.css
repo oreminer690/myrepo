@@ -1,0 +1,30 @@
+.mostShort {
+    height: 26px;
+}
+
+.btn-danger {
+    background-color: red;
+    color: white !important;
+    border: solid gray thin;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    text-decoration: none !important;
+}
+
+.btn-white {
+    background-color: white;
+    color: black !important;
+    border: solid gray thin;
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    text-decoration: none !important;
+}
+
+.backButton {
+    background-color: rgb(190, 122, 58) !important;
+
+    color: white !important;
+}
+
