@@ -1,0 +1,21 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "i dont know. it's my first repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oreminer690/myrepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oreminer690/myrepo/issues"
+  },
+  "homepage": "https://github.com/oreminer690/myrepo#readme"
+}
